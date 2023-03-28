@@ -1,0 +1,10 @@
+storage-provider: 'FileStorageProvider' # FileStorageProvider or S3StorageProvider
+baseurl: 'https://something.example.com/%file%'
+
+s3:
+  auth:
+    enabled: true
+    accessKey: 'key'
+    secretKey: 'secret'
+  region: 'us-east-1'
+  bucket: 'bucket'

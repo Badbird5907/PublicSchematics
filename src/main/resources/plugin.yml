@@ -1,0 +1,11 @@
+name: PublicSchematics
+version: '${version}'
+main: dev.badbird.publicschematics.PublicSchematics
+api-version: 1.19
+depend:
+  - WorldEdit
+commands:
+  downloadschem:
+    description: Download your current selection as a schematic
+    usage: /downloadschem
+    aliases: [ds]
