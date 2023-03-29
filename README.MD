@@ -1,5 +1,9 @@
 # Public Schematics
-Basically //schematic for everyone, allows players to create and download schematics.
+Basically //schematic for everyone, allows players to create and download schematics (S3/Disk).
+
+Also has support for replacing blocks, preventing abuse.
+
+For example ores -> stone/deepslate. (see [config.yml](https://github.com/Badbird5907/PublicSchematics/blob/master/src/main/resources/config.yml))
 
 # Usage
 Configure the plugin in config.yml.
@@ -11,3 +15,4 @@ The server will then generate a schematic file and upload it to S3 (if configure
  - [ ] Add support for object lifecycle management, so that schematics can be deleted after a certain amount of time 
  - [ ] Add permissions
  - [ ] Rewrite command stuff, that was written in a hurry
+ - [ ] Configurable messages
