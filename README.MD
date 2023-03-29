@@ -5,6 +5,8 @@ Also has support for replacing blocks, preventing abuse.
 
 For example ores -> stone/deepslate. (see [config.yml](https://github.com/Badbird5907/PublicSchematics/blob/master/src/main/resources/config.yml))
 
+![replacement](https://user-images.githubusercontent.com/50347938/228418645-baf7e75a-2d31-4667-b644-7c11801ceae6.png)
+
 # Usage
 Configure the plugin in config.yml.
 
