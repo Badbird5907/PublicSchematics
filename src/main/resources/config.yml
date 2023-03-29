@@ -8,7 +8,9 @@ replace-blocks:
   1:
     search: '^(?!DEEPSLATE_).*_ORE$'
     replace: 'STONE'
-
+  2:
+    search: 'ANCIENT_DEBRIS'
+    replace: 'NETHERRACK'
 s3:
   auth:
     enabled: true

@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
 group = "dev.badbird"
@@ -54,5 +55,9 @@ tasks {
         from("build/libs")
         into("run/plugins")
         rename { "PublicSchematics.jar" }
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    }
+    jar {
+        dependsOn("shadowJar")
     }
 }
