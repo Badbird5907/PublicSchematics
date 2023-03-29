@@ -3,6 +3,7 @@ package dev.badbird.publicschematics.storage.impl;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
@@ -17,6 +18,7 @@ public class S3StorageProvider implements StorageProvider {
     private AWSCredentials credentials;
     private AmazonS3 s3client;
     private String bucket;
+    private String endpoint;
 
     @Override
     public void init(PublicSchematics plugin) {
@@ -29,12 +31,15 @@ public class S3StorageProvider implements StorageProvider {
         }
         bucket = config.getString("s3.bucket");
         bucket = config.getString("s3.path");
+        endpoint = config.getString("s3.endpoint");
         String region = config.getString("s3.region");
         AmazonS3ClientBuilder cb = AmazonS3ClientBuilder.standard();
         if (credentials != null) {
             cb.withCredentials(new AWSStaticCredentialsProvider(credentials));
         }
-        if (region != null) {
+        if (endpoint != null) {
+            cb.setEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(endpoint, region));
+        } else if (region != null) {
             cb.withRegion(Regions.fromName(region));
         }
         s3client = cb.build();

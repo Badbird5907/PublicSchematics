@@ -49,4 +49,10 @@ tasks {
             expand(mapOf("version" to version))
         }
     }
+    register<Copy>("copyPlugin") {
+        dependsOn("jar")
+        from("build/libs")
+        into("run/plugins")
+        rename { "PublicSchematics.jar" }
+    }
 }

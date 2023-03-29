@@ -1,6 +1,14 @@
 storage-provider: 'FileStorageProvider' # FileStorageProvider or S3StorageProvider
 baseurl: 'https://something.example.com/%file%'
 
+replace-blocks:
+  0:
+    search: '^DEEPSLATE_.*_ORE$' # regex
+    replace: 'DEEPSLATE'
+  1:
+    search: '^(?!DEEPSLATE_).*_ORE$'
+    replace: 'STONE'
+
 s3:
   auth:
     enabled: true
@@ -8,3 +16,4 @@ s3:
     secretKey: 'secret'
   region: 'us-east-1'
   bucket: 'bucket'
+  endpoint: 'https://s3.example.com'
