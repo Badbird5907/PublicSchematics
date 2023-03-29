@@ -9,3 +9,8 @@ commands:
     description: Download your current selection as a schematic
     usage: /downloadschem
     aliases: [ds]
+
+permissions:
+    downloadschem.use:
+        description: Allows the player to download their current selection as a schematic
+        default: true

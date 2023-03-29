@@ -7,7 +7,6 @@ import com.amazonaws.client.builder.AwsClientBuilder;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
-import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
 import dev.badbird.publicschematics.PublicSchematics;
 import dev.badbird.publicschematics.storage.StorageProvider;
 import dev.badbird.publicschematics.util.S3OutputStream;
@@ -44,13 +43,15 @@ public class S3StorageProvider implements StorageProvider {
         }
         System.out.println("S3StorageProvider: " + cb + " bucket: " + bucket + " endpoint: " + endpoint + " region: " + region + " credentials: " + credentials);
         s3client = cb.build();
+        /*
         BucketLifecycleConfiguration lifecycleConfiguration = new BucketLifecycleConfiguration();
         lifecycleConfiguration.withRules(
                 new BucketLifecycleConfiguration.Rule()
                         .withId("Delete after 1 day")
                         .withExpirationInDays(1)
         );
-        // s3client.setBucketLifecycleConfiguration(bucket, lifecycleConfiguration);
+        s3client.setBucketLifecycleConfiguration(bucket, lifecycleConfiguration);
+         */
     }
 
     @Override
